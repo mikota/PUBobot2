@@ -365,6 +365,7 @@ class PickupQueue:
 				bot.active_queues.append(self)
 
 			if len(self.queue) == self.cfg.size and self.cfg.autostart:
+				await asyncio.sleep(10)
 				await self.start()
 				return bot.Qr.QueueStarted
 
